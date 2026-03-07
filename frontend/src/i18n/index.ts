@@ -13,12 +13,13 @@ i18n
             'zh-CN': { translation: zhCN },
             en: { translation: en },
         },
-        fallbackLng: 'zh-CN',
+        fallbackLng: 'en',
+        supportedLngs: ['en', 'zh-CN'],
         interpolation: {
             escapeValue: false,
         },
         detection: {
-            order: ['localStorage', 'navigator'],
+            order: ['localStorage'],
             lookupLocalStorage: 'i18nextLng',
             caches: ['localStorage'],
         },

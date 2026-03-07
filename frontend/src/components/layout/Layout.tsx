@@ -52,7 +52,7 @@ export function Layout({ children }: LayoutProps) {
       </div>
 
       {/* Mobile header */}
-      <div className="relative z-10 border-b bg-background/80 p-4 backdrop-blur lg:hidden">
+      <div className="relative z-10 border-b border-slate-200/80 bg-background/80 p-4 backdrop-blur dark:border-slate-800/80 lg:hidden">
         <h1 className="text-xl font-bold">ModelForge</h1>
         <Button
           variant="ghost"
@@ -67,7 +67,7 @@ export function Layout({ children }: LayoutProps) {
         {/* Sidebar */}
         <aside
           className={cn(
-            'fixed inset-y-0 left-0 z-50 w-64 border-r border-slate-200/80 bg-white/88 shadow-[0_30px_80px_-70px_rgba(15,23,42,0.35)] backdrop-blur-xl transform transition-transform duration-300 ease-out',
+            'fixed inset-y-0 left-0 z-50 w-64 border-r border-slate-200/80 bg-white/88 shadow-[0_30px_80px_-70px_rgba(15,23,42,0.35)] backdrop-blur-xl transform transition-transform duration-300 ease-out dark:border-slate-800/80 dark:bg-slate-950/88 dark:shadow-[0_34px_90px_-70px_rgba(2,8,23,0.95)]',
             'lg:translate-x-0',
             sidebarOpen ? 'translate-x-0' : '-translate-x-full',
           )}

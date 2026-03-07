@@ -341,7 +341,7 @@ export function ComputerUse() {
 
   return (
     <div className="flex min-h-0 flex-col gap-5" style={{ minHeight: 'calc(100svh - 96px)' }}>
-      <section className="overflow-hidden rounded-[30px] border border-slate-200/80 bg-slate-50/90 shadow-[0_32px_110px_-78px_rgba(15,23,42,0.38)]">
+      <section className="overflow-hidden rounded-[30px] border border-slate-200/80 bg-slate-50/90 shadow-[0_32px_110px_-78px_rgba(15,23,42,0.38)] dark:border-slate-800/90 dark:bg-slate-900/78 dark:shadow-[0_36px_110px_-78px_rgba(2,6,23,0.95)]">
         <div className="grid gap-6 px-6 py-6 lg:grid-cols-[minmax(0,1.15fr)_460px] lg:px-8 lg:py-7">
           <div className="space-y-5">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
@@ -349,7 +349,7 @@ export function ComputerUse() {
                 <div className="flex flex-wrap items-center gap-2">
                   <Badge
                     variant="secondary"
-                    className="rounded-full border border-slate-200 bg-white px-3 py-1 text-[11px] font-medium text-slate-700 shadow-sm"
+                    className="rounded-full border border-slate-200 bg-white px-3 py-1 text-[11px] font-medium text-slate-700 shadow-sm dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200"
                   >
                     {t('computerUse.beta')}
                   </Badge>
@@ -397,7 +397,7 @@ export function ComputerUse() {
                             ? 'border-emerald-200 bg-emerald-50 text-emerald-700'
                             : 'border-rose-200 bg-rose-50 text-rose-700'
                         )
-                        : 'border-slate-200 bg-slate-50 text-slate-700',
+                        : 'border-slate-200 bg-slate-50 text-slate-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200',
                     )}
                   >
                     <ShieldAlert className="h-3.5 w-3.5" />
@@ -411,7 +411,7 @@ export function ComputerUse() {
                       'rounded-full border px-3 py-1 text-[11px] font-medium shadow-sm',
                       activeApprovalMode === 'hands_free'
                         ? 'border-sky-200 bg-sky-50 text-sky-700'
-                        : 'border-slate-200 bg-white text-slate-700',
+                        : 'border-slate-200 bg-white text-slate-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200',
                     )}
                   >
                     {t(getApprovalModeLabelKey(activeApprovalMode))}
@@ -431,10 +431,10 @@ export function ComputerUse() {
 
                 <div className="space-y-3">
                   <div>
-                    <h1 className="text-3xl font-semibold tracking-tight text-slate-950 lg:text-[2.3rem]">
+                    <h1 className="text-3xl font-semibold tracking-tight text-slate-950 dark:text-slate-50 lg:text-[2.3rem]">
                       {t('computerUse.title')}
                     </h1>
-                    <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600 lg:text-[15px]">
+                    <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600 dark:text-slate-300 lg:text-[15px]">
                       {t('computerUse.subtitle')}
                     </p>
                   </div>
@@ -446,7 +446,7 @@ export function ComputerUse() {
                   variant="outline"
                   onClick={handleNewTask}
                   disabled={!canCreateNewTask}
-                  className="rounded-full border-slate-200 bg-white px-4 shadow-sm hover:bg-slate-50"
+                  className="rounded-full border-slate-200 bg-white px-4 shadow-sm hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800"
                 >
                   <Plus className="h-4 w-4" />
                   {t('computerUse.newTask')}
@@ -454,7 +454,7 @@ export function ComputerUse() {
                 <Button
                   variant="outline"
                   onClick={() => void Promise.all([loadStatus(), loadSessions(), reconnectActiveSession()])}
-                  className="rounded-full border-slate-200 bg-white px-4 shadow-sm hover:bg-slate-50"
+                  className="rounded-full border-slate-200 bg-white px-4 shadow-sm hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800"
                 >
                   <RefreshCw className="h-4 w-4" />
                   {t('computerUse.refresh')}
@@ -463,20 +463,20 @@ export function ComputerUse() {
             </div>
 
             <div className="grid gap-3 lg:grid-cols-[240px_minmax(0,1fr)]">
-              <div className="rounded-[24px] border border-slate-200 bg-white px-4 py-4 shadow-sm">
-                <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+              <div className="rounded-[24px] border border-slate-200 bg-white px-4 py-4 shadow-sm dark:border-slate-800 dark:bg-slate-900/90">
+                <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
                   {t('computerUse.model')}
                 </div>
-                <div className="mt-3 truncate text-base font-semibold text-slate-950">
+                <div className="mt-3 truncate text-base font-semibold text-slate-950 dark:text-slate-50">
                   {selectedModel || t('computerUse.selectModel')}
                 </div>
               </div>
 
-              <div className="rounded-[24px] border border-slate-200 bg-white px-4 py-4 shadow-sm">
-                <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+              <div className="rounded-[24px] border border-slate-200 bg-white px-4 py-4 shadow-sm dark:border-slate-800 dark:bg-slate-900/90">
+                <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
                   {t('computerUse.goal')}
                 </div>
-                <div className="mt-3 line-clamp-2 text-sm leading-6 text-slate-700">
+                <div className="mt-3 line-clamp-2 text-sm leading-6 text-slate-700 dark:text-slate-200">
                   {goal.trim() || currentSession?.goal || t('computerUse.overviewNoGoal')}
                 </div>
               </div>
@@ -489,14 +489,14 @@ export function ComputerUse() {
               return (
                 <div
                   key={card.key}
-                  className="rounded-[24px] border border-slate-200 bg-white p-4 shadow-sm"
+                  className="rounded-[24px] border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900/90"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <div className="space-y-3">
-                      <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+                      <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
                         {card.title}
                       </div>
-                      <div className="text-lg font-semibold tracking-tight text-slate-950">
+                      <div className="text-lg font-semibold tracking-tight text-slate-950 dark:text-slate-50">
                         {card.value}
                       </div>
                     </div>
@@ -509,7 +509,7 @@ export function ComputerUse() {
                       <Icon className="h-[18px] w-[18px]" />
                     </div>
                   </div>
-                  <div className="mt-4 line-clamp-2 text-xs leading-5 text-slate-600">
+                  <div className="mt-4 line-clamp-2 text-xs leading-5 text-slate-600 dark:text-slate-300">
                     {card.hint}
                   </div>
                 </div>
@@ -521,7 +521,7 @@ export function ComputerUse() {
 
       <div className="grid shrink-0 gap-3 lg:grid-cols-3">
         {!statusPayload?.desktop_mode && (
-          <div className="rounded-[24px] border border-amber-200/80 bg-amber-50/70 px-4 py-4 shadow-sm">
+          <div className="rounded-[24px] border border-amber-200/80 bg-amber-50/70 px-4 py-4 shadow-sm dark:border-amber-900/60 dark:bg-amber-950/35">
             <div className="flex items-start gap-3">
               <MonitorSmartphone className="mt-0.5 h-[18px] w-[18px] shrink-0 text-amber-600" />
               <div>
@@ -544,7 +544,7 @@ export function ComputerUse() {
                   {t('computerUse.ocrRecommendation', { name: statusPayload.recommended_ocr.name })}
                 </div>
                 {statusPayload.recommended_ocr.install_hint && (
-                  <pre className="mt-3 overflow-x-auto rounded-2xl border border-amber-200/80 bg-white/80 px-3 py-2 text-[11px] leading-5 text-slate-700">
+                  <pre className="mt-3 overflow-x-auto rounded-2xl border border-amber-200/80 bg-white/80 px-3 py-2 text-[11px] leading-5 text-slate-700 dark:border-amber-900/60 dark:bg-slate-950/70 dark:text-slate-200">
                     {statusPayload.recommended_ocr.install_hint}
                   </pre>
                 )}
@@ -554,7 +554,7 @@ export function ComputerUse() {
         )}
 
         {statusPayload && permissions && desktopInputReady && !permissionReady && (
-          <div className="rounded-[24px] border border-rose-200/80 bg-rose-50/70 px-4 py-4 shadow-sm">
+          <div className="rounded-[24px] border border-rose-200/80 bg-rose-50/70 px-4 py-4 shadow-sm dark:border-rose-900/60 dark:bg-rose-950/30">
             <div className="flex h-full flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
               <div className="flex items-start gap-3">
                 <ShieldAlert className="mt-0.5 h-[18px] w-[18px] shrink-0 text-rose-600" />
@@ -575,7 +575,7 @@ export function ComputerUse() {
                 variant="outline"
                 onClick={() => void handleRequestPermissions()}
                 disabled={isRequestingPermissions}
-                className="rounded-full border-rose-200 bg-white/80 px-4 hover:bg-white"
+                className="rounded-full border-rose-200 bg-white/80 px-4 hover:bg-white dark:border-rose-900/60 dark:bg-slate-950/75 dark:text-rose-100 dark:hover:bg-slate-900"
               >
                 {isRequestingPermissions ? (
                   <Loader2 className="h-4 w-4 animate-spin" />
@@ -590,9 +590,9 @@ export function ComputerUse() {
       </div>
 
       <div className="grid min-h-0 flex-1 gap-5 xl:grid-cols-[340px_minmax(0,0.92fr)_minmax(420px,1.08fr)]">
-        <Card className="flex min-h-0 flex-col overflow-hidden rounded-[28px] border-slate-200/80 bg-white/90 shadow-[0_28px_80px_-56px_rgba(15,23,42,0.4)] backdrop-blur">
-          <CardHeader className="border-b border-slate-200/70 pb-4">
-            <CardTitle className="text-lg font-semibold tracking-tight text-slate-950">
+        <Card className="flex min-h-0 flex-col overflow-hidden rounded-[28px] border-slate-200/80 bg-white/90 shadow-[0_28px_80px_-56px_rgba(15,23,42,0.4)] backdrop-blur dark:border-slate-800/90 dark:bg-slate-900/88 dark:shadow-[0_30px_90px_-58px_rgba(2,6,23,0.98)]">
+          <CardHeader className="border-b border-slate-200/70 pb-4 dark:border-slate-800/80">
+            <CardTitle className="text-lg font-semibold tracking-tight text-slate-950 dark:text-slate-50">
               {t('computerUse.taskPanelTitle')}
             </CardTitle>
             <CardDescription className="leading-6">
@@ -603,13 +603,13 @@ export function ComputerUse() {
           <CardContent className="flex-1 overflow-y-auto p-5">
             <div className="space-y-5">
               <div className="space-y-2.5">
-                <Label htmlFor="computer-use-model" className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+                <Label htmlFor="computer-use-model" className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
                   {t('computerUse.model')}
                 </Label>
                 <Select value={selectedModel} onValueChange={setSelectedModel}>
                   <SelectTrigger
                     id="computer-use-model"
-                    className="h-12 rounded-2xl border-slate-200 bg-slate-50/80 px-4 text-sm shadow-inner"
+                    className="h-12 rounded-2xl border-slate-200 bg-slate-50/80 px-4 text-sm shadow-inner dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
                   >
                     <SelectValue placeholder={t('computerUse.selectModel')} />
                   </SelectTrigger>
@@ -627,7 +627,7 @@ export function ComputerUse() {
               </div>
 
               <div className="space-y-2.5">
-                <Label htmlFor="computer-use-goal" className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+                <Label htmlFor="computer-use-goal" className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
                   {t('computerUse.goal')}
                 </Label>
                 <textarea
@@ -635,22 +635,22 @@ export function ComputerUse() {
                   value={goal}
                   onChange={(event) => setGoal(event.target.value)}
                   rows={7}
-                  className="min-h-[176px] w-full rounded-[24px] border border-slate-200 bg-slate-50/80 px-4 py-3 text-sm leading-6 shadow-inner outline-none transition placeholder:text-slate-400 focus:border-slate-300 focus:bg-white focus:ring-2 focus:ring-slate-200 resize-none"
+                  className="min-h-[176px] w-full resize-none rounded-[24px] border border-slate-200 bg-slate-50/80 px-4 py-3 text-sm leading-6 shadow-inner outline-none transition placeholder:text-slate-400 focus:border-slate-300 focus:bg-white focus:ring-2 focus:ring-slate-200 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100 dark:placeholder:text-slate-500 dark:focus:border-slate-600 dark:focus:bg-slate-900 dark:focus:ring-slate-700"
                   placeholder={t('computerUse.goalPlaceholder')}
                 />
               </div>
 
-              <div className="rounded-[24px] border border-slate-200/80 bg-[linear-gradient(180deg,rgba(248,250,252,0.95),rgba(241,245,249,0.78))] p-4">
+              <div className="rounded-[24px] border border-slate-200/80 bg-[linear-gradient(180deg,rgba(248,250,252,0.95),rgba(241,245,249,0.78))] p-4 dark:border-slate-800/80 dark:bg-[linear-gradient(180deg,rgba(15,23,42,0.92),rgba(15,23,42,0.82))]">
                 <div className="flex items-start justify-between gap-3">
                   <div>
-                    <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+                    <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
                       {t('computerUse.settingsCardTitle')}
                     </div>
-                    <div className="mt-2 text-sm leading-6 text-slate-600">
+                    <div className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">
                       {t('computerUse.settingsCardDescription')}
                     </div>
                   </div>
-                  <Button asChild variant="outline" size="sm" className="rounded-full px-3 text-xs">
+                  <Button asChild variant="outline" size="sm" className="rounded-full px-3 text-xs dark:border-slate-700 dark:bg-slate-950/70 dark:text-slate-100 dark:hover:bg-slate-900">
                     <Link to="/settings">
                       <Settings2 className="h-3.5 w-3.5" />
                       {t('computerUse.openSettings')}
@@ -659,28 +659,28 @@ export function ComputerUse() {
                 </div>
 
                 <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                  <div className="rounded-[18px] border border-white/80 bg-white/85 px-4 py-3 shadow-sm">
-                    <div className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-500">
+                  <div className="rounded-[18px] border border-white/80 bg-white/85 px-4 py-3 shadow-sm dark:border-slate-800 dark:bg-slate-950/78">
+                    <div className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">
                       {t('computerUse.approvalMode')}
                     </div>
-                    <div className="mt-2 text-sm font-semibold text-slate-950">
+                    <div className="mt-2 text-sm font-semibold text-slate-950 dark:text-slate-50">
                       {t(getApprovalModeLabelKey(approvalMode))}
                     </div>
-                    <div className="mt-1 text-xs leading-5 text-slate-500">
+                    <div className="mt-1 text-xs leading-5 text-slate-500 dark:text-slate-400">
                       {approvalMode === 'hands_free'
                         ? t('computerUse.approvalModeHandsFreeHint')
                         : t('computerUse.approvalModeReviewAllHint')}
                     </div>
                   </div>
 
-                  <div className="rounded-[18px] border border-white/80 bg-white/85 px-4 py-3 shadow-sm">
-                    <div className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-500">
+                  <div className="rounded-[18px] border border-white/80 bg-white/85 px-4 py-3 shadow-sm dark:border-slate-800 dark:bg-slate-950/78">
+                    <div className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">
                       {t('computerUse.scopeAutoTitle')}
                     </div>
-                    <div className="mt-2 text-sm font-semibold text-slate-950">
+                    <div className="mt-2 text-sm font-semibold text-slate-950 dark:text-slate-50">
                       {useCustomScope ? t('computerUse.scopeCustomize') : t('computerUse.scopeAutoTitle')}
                     </div>
-                    <div className="mt-1 text-xs leading-5 text-slate-500">
+                    <div className="mt-1 text-xs leading-5 text-slate-500 dark:text-slate-400">
                       {useCustomScope ? (cwd || statusPayload?.default_cwd || '-') : t('computerUse.allowedPathsHint')}
                     </div>
                   </div>
@@ -731,31 +731,31 @@ export function ComputerUse() {
               </div>
 
               <div className="grid gap-3 sm:grid-cols-2">
-                <div className="rounded-[22px] border border-slate-200 bg-slate-50/80 px-4 py-4">
-                  <div className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-500">
+                <div className="rounded-[22px] border border-slate-200 bg-slate-50/80 px-4 py-4 dark:border-slate-800 dark:bg-slate-950/78">
+                  <div className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">
                     {t('computerUse.sessionModel')}
                   </div>
-                  <div className="mt-2 truncate text-sm font-semibold text-slate-950">
+                  <div className="mt-2 truncate text-sm font-semibold text-slate-950 dark:text-slate-50">
                     {currentSession?.model || selectedModel || '-'}
                   </div>
                 </div>
-                <div className="rounded-[22px] border border-slate-200 bg-slate-50/80 px-4 py-4">
-                  <div className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-500">
+                <div className="rounded-[22px] border border-slate-200 bg-slate-50/80 px-4 py-4 dark:border-slate-800 dark:bg-slate-950/78">
+                  <div className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">
                     {t('computerUse.actionCount')}
                   </div>
-                  <div className="mt-2 text-sm font-semibold text-slate-950">{actionCount}</div>
+                  <div className="mt-2 text-sm font-semibold text-slate-950 dark:text-slate-50">{actionCount}</div>
                 </div>
-                <div className="rounded-[22px] border border-slate-200 bg-slate-50/80 px-4 py-4">
-                  <div className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-500">
+                <div className="rounded-[22px] border border-slate-200 bg-slate-50/80 px-4 py-4 dark:border-slate-800 dark:bg-slate-950/78">
+                  <div className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">
                     {t('computerUse.approvalCount')}
                   </div>
-                  <div className="mt-2 text-sm font-semibold text-slate-950">{pendingApprovalCount}</div>
+                  <div className="mt-2 text-sm font-semibold text-slate-950 dark:text-slate-50">{pendingApprovalCount}</div>
                 </div>
-                <div className="rounded-[22px] border border-slate-200 bg-slate-50/80 px-4 py-4">
-                  <div className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-500">
+                <div className="rounded-[22px] border border-slate-200 bg-slate-50/80 px-4 py-4 dark:border-slate-800 dark:bg-slate-950/78">
+                  <div className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">
                     {t('computerUse.approvalMode')}
                   </div>
-                  <div className="mt-2 text-sm font-semibold text-slate-950">
+                  <div className="mt-2 text-sm font-semibold text-slate-950 dark:text-slate-50">
                     {t(getApprovalModeLabelKey(activeApprovalMode))}
                   </div>
                 </div>
@@ -785,13 +785,13 @@ export function ComputerUse() {
                 </div>
               )}
 
-              <div className="rounded-[24px] border border-slate-200/80 bg-[linear-gradient(180deg,rgba(248,250,252,0.95),rgba(241,245,249,0.78))] p-4">
+              <div className="rounded-[24px] border border-slate-200/80 bg-[linear-gradient(180deg,rgba(248,250,252,0.95),rgba(241,245,249,0.78))] p-4 dark:border-slate-800/80 dark:bg-[linear-gradient(180deg,rgba(15,23,42,0.92),rgba(15,23,42,0.82))]">
                 <div className="flex items-start justify-between gap-3">
                   <div>
-                    <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+                    <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
                       {t('computerUse.historyTitle')}
                     </div>
-                    <div className="mt-2 text-sm leading-6 text-slate-600">
+                    <div className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">
                       {t('computerUse.historyDescription')}
                     </div>
                   </div>
@@ -808,14 +808,14 @@ export function ComputerUse() {
                     <Button
                       variant="outline"
                       size="sm"
-                      className="h-8 rounded-full px-3 text-xs text-rose-700 hover:bg-rose-50"
+                      className="h-8 rounded-full px-3 text-xs text-rose-700 hover:bg-rose-50 dark:border-rose-900/60 dark:bg-slate-950/70 dark:text-rose-200 dark:hover:bg-rose-950/40"
                       disabled={!canDeleteAllHistory}
                       onClick={() => setIsDeleteAllOpen(true)}
                     >
                       <Trash2 className="h-3.5 w-3.5" />
                       {t('computerUse.deleteAll')}
                     </Button>
-                    <Badge variant="outline" className="rounded-full border-slate-200 bg-white px-3 py-1 text-[11px] text-slate-700">
+                    <Badge variant="outline" className="rounded-full border-slate-200 bg-white px-3 py-1 text-[11px] text-slate-700 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-200">
                       {sessions.length}
                     </Badge>
                   </div>
@@ -824,7 +824,7 @@ export function ComputerUse() {
                 {!isHistoryCollapsed && (
                   <div className="mt-4 space-y-2">
                   {sessions.length === 0 ? (
-                    <div className="rounded-[20px] border border-dashed border-slate-300 bg-white/70 px-4 py-5 text-sm leading-6 text-slate-500">
+                    <div className="rounded-[20px] border border-dashed border-slate-300 bg-white/70 px-4 py-5 text-sm leading-6 text-slate-500 dark:border-slate-700 dark:bg-slate-950/55 dark:text-slate-400">
                       {t('computerUse.noHistory')}
                     </div>
                   ) : sessions.map((item) => {
@@ -841,7 +841,7 @@ export function ComputerUse() {
                           'w-full rounded-[20px] border px-4 py-3 text-left transition',
                           active
                             ? 'border-slate-950 bg-slate-950 text-white shadow-[0_18px_40px_-30px_rgba(15,23,42,0.9)]'
-                            : 'border-slate-200 bg-white/85 text-slate-800 hover:border-slate-300 hover:bg-white',
+                            : 'border-slate-200 bg-white/85 text-slate-800 hover:border-slate-300 hover:bg-white dark:border-slate-800 dark:bg-slate-950/75 dark:text-slate-100 dark:hover:border-slate-700 dark:hover:bg-slate-900',
                           disabled && 'cursor-not-allowed opacity-55',
                         )}
                       >
@@ -850,7 +850,7 @@ export function ComputerUse() {
                             <div className="truncate text-sm font-semibold">
                               {item.goal || t('computerUse.overviewNoGoal')}
                             </div>
-                            <div className={cn('mt-1 text-xs leading-5', active ? 'text-slate-300' : 'text-slate-500')}>
+                            <div className={cn('mt-1 text-xs leading-5', active ? 'text-slate-300' : 'text-slate-500 dark:text-slate-400')}>
                               {item.model} · {formatHistoryTimestamp(item)}
                             </div>
                           </div>
@@ -882,11 +882,11 @@ export function ComputerUse() {
         </Card>
 
         <div className="flex min-h-0 flex-col gap-5">
-          <Card className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-[30px] border-slate-200/80 bg-white/90 shadow-[0_30px_90px_-60px_rgba(15,23,42,0.42)] backdrop-blur">
-            <CardHeader className="border-b border-slate-200/70 pb-4">
+          <Card className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-[30px] border-slate-200/80 bg-white/90 shadow-[0_30px_90px_-60px_rgba(15,23,42,0.42)] backdrop-blur dark:border-slate-800/90 dark:bg-slate-900/88 dark:shadow-[0_30px_92px_-62px_rgba(2,6,23,0.98)]">
+            <CardHeader className="border-b border-slate-200/70 pb-4 dark:border-slate-800/80">
               <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
                 <div>
-                  <CardTitle className="text-lg font-semibold tracking-tight text-slate-950">
+                  <CardTitle className="text-lg font-semibold tracking-tight text-slate-950 dark:text-slate-50">
                     {t('computerUse.screenPanelTitle')}
                   </CardTitle>
                   <CardDescription className="mt-2 leading-6">
@@ -896,7 +896,7 @@ export function ComputerUse() {
 
                 <div className="flex flex-wrap items-center gap-2">
                   {currentSession?.model && (
-                    <Badge variant="outline" className="rounded-full border-slate-200 bg-white px-3 py-1 text-[11px] text-slate-700">
+                    <Badge variant="outline" className="rounded-full border-slate-200 bg-white px-3 py-1 text-[11px] text-slate-700 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-200">
                       {currentSession.model}
                     </Badge>
                   )}
@@ -904,7 +904,7 @@ export function ComputerUse() {
                     variant="outline"
                     className={cn(
                       'rounded-full border px-3 py-1 text-[11px] font-medium',
-                      currentSession ? getSessionPillClasses(currentSession.status) : 'border-slate-200 bg-slate-50 text-slate-600',
+                      currentSession ? getSessionPillClasses(currentSession.status) : 'border-slate-200 bg-slate-50 text-slate-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300',
                     )}
                   >
                     {currentSession ? formatStatusLabel(currentSession.status) : t('computerUse.overviewNoSession')}
@@ -949,21 +949,21 @@ export function ComputerUse() {
               </div>
 
               <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)]">
-                <div className="rounded-[24px] border border-slate-200 bg-slate-50/80 p-4">
-                  <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+                <div className="rounded-[24px] border border-slate-200 bg-slate-50/80 p-4 dark:border-slate-800 dark:bg-slate-950/78">
+                  <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
                     {t('computerUse.goal')}
                   </div>
-                  <div className="mt-3 text-sm leading-6 text-slate-700">
+                  <div className="mt-3 text-sm leading-6 text-slate-700 dark:text-slate-200">
                     {currentSession?.goal || goal.trim() || t('computerUse.overviewNoGoal')}
                   </div>
                 </div>
 
-                <div className="rounded-[24px] border border-slate-200 bg-slate-50/80 p-4">
+                <div className="rounded-[24px] border border-slate-200 bg-slate-50/80 p-4 dark:border-slate-800 dark:bg-slate-950/78">
                   <div className="flex items-center justify-between gap-3">
-                    <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+                    <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
                       {t('computerUse.allowedPaths')}
                     </div>
-                    <div className="max-w-[55%] truncate text-xs text-slate-500">
+                    <div className="max-w-[55%] truncate text-xs text-slate-500 dark:text-slate-400">
                       {activeScopeCwd}
                     </div>
                   </div>
@@ -971,12 +971,12 @@ export function ComputerUse() {
                     {previewAllowedPaths.length > 0 ? previewAllowedPaths.map((path) => (
                       <div
                         key={path}
-                        className="inline-flex max-w-full items-center rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700"
+                        className="inline-flex max-w-full items-center rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200"
                       >
                         <span className="truncate">{path}</span>
                       </div>
                     )) : (
-                      <div className="text-sm leading-6 text-slate-600">
+                      <div className="text-sm leading-6 text-slate-600 dark:text-slate-300">
                         {t('computerUse.overviewScopeEmpty')}
                       </div>
                     )}
@@ -988,9 +988,9 @@ export function ComputerUse() {
         </div>
 
         <div className="flex min-h-0 flex-col gap-5">
-          <Card className="flex min-h-[360px] flex-col overflow-hidden rounded-[28px] border-slate-200/80 bg-white/90 shadow-[0_28px_80px_-56px_rgba(15,23,42,0.38)] backdrop-blur xl:min-h-[420px]">
-            <CardHeader className="border-b border-slate-200/70 pb-4">
-              <CardTitle className="text-lg font-semibold tracking-tight text-slate-950">
+          <Card className="flex min-h-[360px] flex-col overflow-hidden rounded-[28px] border-slate-200/80 bg-white/90 shadow-[0_28px_80px_-56px_rgba(15,23,42,0.38)] backdrop-blur dark:border-slate-800/90 dark:bg-slate-900/88 dark:shadow-[0_30px_90px_-58px_rgba(2,6,23,0.98)] xl:min-h-[420px]">
+            <CardHeader className="border-b border-slate-200/70 pb-4 dark:border-slate-800/80">
+              <CardTitle className="text-lg font-semibold tracking-tight text-slate-950 dark:text-slate-50">
                 {t('computerUse.assistantStream')}
               </CardTitle>
               <CardDescription className="leading-6">
@@ -1004,27 +1004,27 @@ export function ComputerUse() {
                     content={currentSession.assistant_text}
                     enableMath={false}
                     enableCodeHighlight={false}
-                    className="text-[15px] leading-7 text-slate-700 [&>*:first-child]:mt-0 [&>*:last-child]:mb-0"
+                    className="text-[15px] leading-7 text-slate-700 dark:text-slate-100 [&>*:first-child]:mt-0 [&>*:last-child]:mb-0"
                   />
                 ) : (
                   <MarkdownRenderer
                     content={currentSession.assistant_text}
                     enableMath={false}
                     enableCodeHighlight={false}
-                    className="text-[15px] leading-7 text-slate-700 [&>*:first-child]:mt-0 [&>*:last-child]:mb-0"
+                    className="text-[15px] leading-7 text-slate-700 dark:text-slate-100 [&>*:first-child]:mt-0 [&>*:last-child]:mb-0"
                   />
                 )
               ) : (
-                <div className="text-[15px] leading-7 text-slate-500">
+                <div className="text-[15px] leading-7 text-slate-500 dark:text-slate-400">
                   {isStreaming ? t('computerUse.waitingAssistant') : t('computerUse.noAssistantYet')}
                 </div>
               )}
             </CardContent>
           </Card>
 
-          <Card className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-[28px] border-slate-200/80 bg-white/90 shadow-[0_28px_80px_-56px_rgba(15,23,42,0.38)] backdrop-blur">
-            <CardHeader className="border-b border-slate-200/70 pb-4">
-              <CardTitle className="text-lg font-semibold tracking-tight text-slate-950">
+          <Card className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-[28px] border-slate-200/80 bg-white/90 shadow-[0_28px_80px_-56px_rgba(15,23,42,0.38)] backdrop-blur dark:border-slate-800/90 dark:bg-slate-900/88 dark:shadow-[0_30px_90px_-58px_rgba(2,6,23,0.98)]">
+            <CardHeader className="border-b border-slate-200/70 pb-4 dark:border-slate-800/80">
+              <CardTitle className="text-lg font-semibold tracking-tight text-slate-950 dark:text-slate-50">
                 {t('computerUse.timelineTitle')}
               </CardTitle>
               <CardDescription className="leading-6">
@@ -1056,21 +1056,21 @@ export function ComputerUse() {
                 )}
 
                 {timeline.length === 0 && (
-                  <div className="rounded-[24px] border border-dashed border-slate-300 p-8 text-center text-sm leading-6 text-slate-500">
+                  <div className="rounded-[24px] border border-dashed border-slate-300 p-8 text-center text-sm leading-6 text-slate-500 dark:border-slate-700 dark:text-slate-400">
                     {t('computerUse.noTimeline')}
                   </div>
                 )}
 
                 {timeline.map((action) => (
-                  <div key={action.id} className="rounded-[24px] border border-slate-200 bg-slate-50/70 p-4 shadow-sm">
+                  <div key={action.id} className="rounded-[24px] border border-slate-200 bg-slate-50/70 p-4 shadow-sm dark:border-slate-800 dark:bg-slate-950/72">
                     <div className="flex items-start justify-between gap-3">
                       <div className="min-w-0">
                         <div className="flex items-center gap-2">
-                          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-600">
+                          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300">
                             <Bot className="h-4 w-4" />
                           </div>
                           <div className="min-w-0">
-                            <div className="truncate text-sm font-semibold text-slate-950">
+                            <div className="truncate text-sm font-semibold text-slate-950 dark:text-slate-50">
                               {action.tool_name}
                             </div>
                             <div className="mt-1 flex flex-wrap gap-2">
@@ -1193,59 +1193,59 @@ function formatStatusLabel(status?: string | null): string {
 function getSessionPillClasses(status?: string): string {
   switch (status) {
     case 'running':
-      return 'border-emerald-200 bg-emerald-50 text-emerald-700';
+      return 'border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-900/60 dark:bg-emerald-950/35 dark:text-emerald-300';
     case 'completed':
-      return 'border-emerald-200 bg-emerald-50 text-emerald-700';
+      return 'border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-900/60 dark:bg-emerald-950/35 dark:text-emerald-300';
     case 'paused':
-      return 'border-amber-200 bg-amber-50 text-amber-700';
+      return 'border-amber-200 bg-amber-50 text-amber-700 dark:border-amber-900/60 dark:bg-amber-950/35 dark:text-amber-300';
     case 'waiting_approval':
-      return 'border-amber-200 bg-amber-50 text-amber-700';
+      return 'border-amber-200 bg-amber-50 text-amber-700 dark:border-amber-900/60 dark:bg-amber-950/35 dark:text-amber-300';
     case 'failed':
     case 'cancelled':
-      return 'border-rose-200 bg-rose-50 text-rose-700';
+      return 'border-rose-200 bg-rose-50 text-rose-700 dark:border-rose-900/60 dark:bg-rose-950/30 dark:text-rose-300';
     default:
-      return 'border-slate-200 bg-slate-50 text-slate-600';
+      return 'border-slate-200 bg-slate-50 text-slate-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300';
   }
 }
 
 function getOverviewToneClasses(tone: 'neutral' | 'emerald' | 'amber' | 'rose'): string {
   switch (tone) {
     case 'emerald':
-      return 'border-emerald-200/80 bg-emerald-50 text-emerald-700';
+      return 'border-emerald-200/80 bg-emerald-50 text-emerald-700 dark:border-emerald-900/60 dark:bg-emerald-950/35 dark:text-emerald-300';
     case 'amber':
-      return 'border-amber-200/80 bg-amber-50 text-amber-700';
+      return 'border-amber-200/80 bg-amber-50 text-amber-700 dark:border-amber-900/60 dark:bg-amber-950/35 dark:text-amber-300';
     case 'rose':
-      return 'border-rose-200/80 bg-rose-50 text-rose-700';
+      return 'border-rose-200/80 bg-rose-50 text-rose-700 dark:border-rose-900/60 dark:bg-rose-950/30 dark:text-rose-300';
     default:
-      return 'border-slate-200 bg-slate-50 text-slate-600';
+      return 'border-slate-200 bg-slate-50 text-slate-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300';
   }
 }
 
 function getActionStatusClasses(status?: string): string {
   switch (status) {
     case 'completed':
-      return 'border-emerald-200 bg-emerald-50 text-emerald-700';
+      return 'border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-900/60 dark:bg-emerald-950/35 dark:text-emerald-300';
     case 'running':
     case 'started':
-      return 'border-sky-200 bg-sky-50 text-sky-700';
+      return 'border-sky-200 bg-sky-50 text-sky-700 dark:border-sky-900/60 dark:bg-sky-950/35 dark:text-sky-300';
     case 'error':
     case 'failed':
-      return 'border-rose-200 bg-rose-50 text-rose-700';
+      return 'border-rose-200 bg-rose-50 text-rose-700 dark:border-rose-900/60 dark:bg-rose-950/30 dark:text-rose-300';
     default:
-      return 'border-slate-200 bg-white text-slate-600';
+      return 'border-slate-200 bg-white text-slate-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300';
   }
 }
 
 function getRiskPillClasses(risk?: string): string {
   const normalized = risk?.toLowerCase() || '';
   if (normalized.includes('high')) {
-    return 'border-rose-200 bg-rose-50 text-rose-700';
+    return 'border-rose-200 bg-rose-50 text-rose-700 dark:border-rose-900/60 dark:bg-rose-950/30 dark:text-rose-300';
   }
   if (normalized.includes('medium')) {
-    return 'border-amber-200 bg-amber-50 text-amber-700';
+    return 'border-amber-200 bg-amber-50 text-amber-700 dark:border-amber-900/60 dark:bg-amber-950/35 dark:text-amber-300';
   }
   if (normalized.includes('low')) {
-    return 'border-emerald-200 bg-emerald-50 text-emerald-700';
+    return 'border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-900/60 dark:bg-emerald-950/35 dark:text-emerald-300';
   }
-  return 'border-slate-200 bg-white text-slate-600';
+  return 'border-slate-200 bg-white text-slate-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300';
 }

